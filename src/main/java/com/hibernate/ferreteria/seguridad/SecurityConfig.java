@@ -45,7 +45,7 @@ public class SecurityConfig{
              http.
                 csrf(csrf -> csrf.disable()) //Deshabilita la protección CSRF para facilitar las pruebas con Postman
                 .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/apli/auth/**").permitAll() //Permite el acceso sin autenticación a las rutas de autenticación para login
+                    .requestMatchers("/api/auth/**").permitAll() //Permite el acceso sin autenticación a las rutas de autenticación para login
                     .requestMatchers("/api/articulos/**").hasAnyRole("ADMIN", "USER") //Rutas de articulos accesibles para solo para ADMIN y USER
                     //Todas las demas rutas requieren autenticación
                     .anyRequest().authenticated()
